@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Map;
+
 public class HelloWorldApiTest {
     String url = "https://sandbox.api.service.nhs.uk/hello-world/hello/world";
 
@@ -16,6 +18,14 @@ public class HelloWorldApiTest {
         Response response = RestAssured.get(url);
 
         response.prettyPrint();
+
+        System.out.println(response.statusCode());
+        System.out.println(response.statusLine());
+
+        Assertions.assertEquals(200,response.statusCode());
+
+
+
 
     }
 
